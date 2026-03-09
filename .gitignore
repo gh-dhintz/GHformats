@@ -6,3 +6,11 @@
 # OS
 .DS_Store
 Thumbs.db
+
+# Temp files and build artifacts
+*.swp
+.DS_Store
+*~$*
+*.bak
+cache/
+figs/
