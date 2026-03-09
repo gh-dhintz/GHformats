@@ -7,13 +7,12 @@
 
 
 /*
-Darkred: #b70000
-Red:   #E2001A
-Lightred: #F07F8C
-Bluegrey: #3B515B
-Blue:  #0271BB
-Lightblue: #80B8DD
-Grey:  #B6BFC3
+Guardant Health Color Scheme:
+Primary - Science Blue: #005CB9
+Secondary - Blood Red: #EA1D23
+Secondary - Light Blue: #1CB3E8
+Tertiary - Data Gray: #4A5054
+Tertiary - Light Gray: #EDEEEF
 */
 
 
@@ -223,9 +222,10 @@ summary {
 
 
 .header-panel {
-  background-color: #0271BB;
+  background-color: #FFFFFF;
   height: 75px;
   margin-bottom: 1rem;
+  border-bottom: 4px solid #005CB9;
 }
 
 .main-container {
@@ -422,7 +422,7 @@ h6 {
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-  background-color: #0271BB;
+  background-color: #005CB9;
 }
 
 /* Chi-squared results */

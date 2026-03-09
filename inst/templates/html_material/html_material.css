@@ -7,13 +7,12 @@
 
 
 /*
-Darkred: #b70000
-Red:   #E2001A
-Lightred: #F07F8C
-Bluegrey: #3B515B
-Blue:  #0271BB
-Lightblue: #80B8DD
-Grey:  #B6BFC3
+Guardant Health Color Scheme:
+Primary - Science Blue: #005CB9
+Secondary - Blood Red: #EA1D23
+Secondary - Light Blue: #1CB3E8
+Tertiary - Data Gray: #4A5054
+Tertiary - Light Gray: #EDEEEF
 */
 
 
@@ -238,7 +237,7 @@ h2, h3, h4 {
 /* =============== Header =============== */
 
 .header-panel {
-    background-color: #0271BB;
+    background: linear-gradient(45deg, #FF0023, #0070C0, #00C0E5);
     min-height: 100px;
     position: relative;
     z-index: 3;

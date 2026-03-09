@@ -1,11 +1,14 @@
 /* -------------- Background style ------------- */
 
 /* #quarto-content {
-  background: linear-gradient(0.25turn, #0271BB, #3B515B);
+  background: linear-gradient(45deg, #FF0023, #0070C0, #00C0E5);
 } */
 
 body {
-  background: linear-gradient(0.25turn, #0271BB, #3B515B);
+  background: linear-gradient(45deg, #FF0023, #0070C0, #00C0E5);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 

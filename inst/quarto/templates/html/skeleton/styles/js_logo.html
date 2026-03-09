@@ -2,17 +2,99 @@
   "use strict";
   const divSidebarLeft = window.document.getElementById("quarto-sidebar-toc-left");
   const toc = window.document.getElementById("TOC");
+  
+  // Create container for metadata
+  const divMetadata = window.document.createElement("div");
+  divMetadata.classList.add("sidebar-metadata");
+  divMetadata.style.color = "white";
+  divMetadata.style.marginBottom = "20px";
+
+  // Get metadata from document
+  const titleEl = window.document.querySelector("h1.title");
+  const subtitleEl = window.document.querySelector("p.subtitle");
+  const authorEl = window.document.querySelector(".quarto-title-author-name");
+  const affiliationEl = window.document.querySelector(".quarto-title-affiliation");
+  const dateEl = window.document.querySelector(".date");
+
+  // Hide the title block from main content (contains title, subtitle, author, affiliation, date)
+  const headerEl = window.document.querySelector("header#title-block-header");
+  if (headerEl) {
+    headerEl.style.display = "none";
+  }
+
+  // Add title
+  if (titleEl) {
+    const title = window.document.createElement("div");
+    title.classList.add("sidebar-title");
+    title.style.fontSize = "1.5rem";
+    title.style.fontWeight = "bold";
+    title.style.marginBottom = "10px";
+    title.style.color = "white";
+    title.textContent = titleEl.textContent;
+    divMetadata.appendChild(title);
+  }
+
+  // Add subtitle
+  if (subtitleEl) {
+    const subtitle = window.document.createElement("div");
+    subtitle.classList.add("sidebar-subtitle");
+    subtitle.style.fontSize = "1.1rem";
+    subtitle.style.marginBottom = "15px";
+    subtitle.style.color = "white";
+    subtitle.style.fontStyle = "italic";
+    subtitle.textContent = subtitleEl.textContent;
+    divMetadata.appendChild(subtitle);
+  }
+
+  // Add author
+  if (authorEl) {
+    const author = window.document.createElement("div");
+    author.classList.add("sidebar-author");
+    author.style.fontSize = "1rem";
+    author.style.marginBottom = "5px";
+    author.style.color = "white";
+    author.textContent = authorEl.textContent;
+    divMetadata.appendChild(author);
+  }
+
+  // Add affiliation
+  if (affiliationEl) {
+    const affiliation = window.document.createElement("div");
+    affiliation.classList.add("sidebar-affiliation");
+    affiliation.style.fontSize = "0.9rem";
+    affiliation.style.marginBottom = "5px";
+    affiliation.style.color = "white";
+    affiliation.style.opacity = "0.9";
+    affiliation.textContent = affiliationEl.textContent;
+    divMetadata.appendChild(affiliation);
+  }
+
+  // Add date
+  if (dateEl) {
+    const date = window.document.createElement("div");
+    date.classList.add("sidebar-date");
+    date.style.fontSize = "0.9rem";
+    date.style.marginBottom = "15px";
+    date.style.color = "white";
+    date.style.opacity = "0.9";
+    date.textContent = dateEl.textContent;
+    divMetadata.appendChild(date);
+  }
+  
+  // Create logo element
   const divLogo = window.document.createElement("div");
   divLogo.classList.add("logo");
-  divLogo.style.width = "150px";
-  divLogo.style.height = "50px";
-  divLogo.style.backgroundImage = "url('images/uhh_logo.png')";
+  divLogo.style.width = "55px";
+  divLogo.style.height = "55px";
+  divLogo.style.backgroundImage = "url('images/logo.svg')";
   divLogo.style.backgroundRepeat = "no-repeat";
-  divLogo.style.backgroundSize = "cover";
+  divLogo.style.backgroundSize = "contain";
+  divLogo.style.backgroundPosition = "center";
+  divLogo.style.marginBottom = "50px";
   
-  // remove and append TOC later to change order
-  // in case .prepend does not work in internet explorer
+  // Remove TOC and add elements in order: metadata, logo, TOC
   divSidebarLeft.removeChild(toc); 
+  divSidebarLeft.appendChild(divMetadata);
   divSidebarLeft.appendChild(divLogo); 
   divSidebarLeft.appendChild(toc); 
 
