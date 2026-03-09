@@ -21,7 +21,20 @@ format:
       - right=25mm
       - heightrounded
     include-in-header:
-      - styles/in-header.tex 
+      - styles/in-header.tex
+      - text: |
+          % Make entire TOC entries clickable, not just page numbers
+          \hypersetup{
+            linktocpage=false,
+            linktoc=all
+          }
+      - text: |
+          % Prevent blank pages before chapters
+          \KOMAoptions{twoside=false}
+          \raggedbottom
+          \makeatletter
+          \renewcommand*{\cleardoublepage}{\clearpage}
+          \makeatother
     toc: false
     toc-depth: 3
     toc-title: Contents       # remove line or adjust if language is German
@@ -55,7 +68,7 @@ library(knitr)
 #| include: false
 # Automatically create a bib database for R packages used above
 knitr::write_bib(
-  x = c(.packages(), 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
@@ -79,7 +92,7 @@ Configure the YAML header including the following elements:
 - `execute`: Global options for customizing output from executed code are specified within this execute key.
 - `fig-align`: Global settings for figure positioning. For other settings see the [PDF format reference](https://quarto.org/docs/reference/formats/pdf.html).
 
-The default font for this template is 'Helvetica' but can be replaced with the University's own font style 'TheSansUHH'. If you are associated with the UHH you are allowed to use this font. You can choose the font in the template when running the function, e.g., `UHHformats::create_quarto_doc(dirname = "pdf_simple_doc", template = "pdf_simple", font = "TheSansUHH")`.
+The default font for this template is 'Helvetica' but can be replaced with the Guardant Health's own font style 'HelveticaNeue'.You can choose the font in the template when running the function, e.g., `GHformats::create_quarto_doc(dirname = "your_pdf_report, template = "pdf_report", font = "HelveticaNeue")`. 
 
 
 ## Code blocks
@@ -279,68 +292,6 @@ boxplot(mpg ~ am, mtcars)
 ```
 
 
-## Diagrams
-
-Quarto has native support for embedding *Mermaid* and *Graphviz* diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, gnatt charts, and more using a plain text syntax inspired by markdown.
-
-### Mermaid
-
-Mermaid is a Javascript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams (see @fig-mermaid-diagram).
-
-```{mermaid}
-%%| label: fig-mermaid-diagram
-%%| fig-cap: Simple flowchart based on the JS-tool Mermaid.
-%%| fig-width: 6
-flowchart LR
-  A[Hard edge] --> B(Round edge)
-  B --> C{Decision}
-  C --> D[Result one]
-  C --> E[Result two]
-  style C fill:#f9f,stroke:#333,stroke-width:4px
-  style E fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
-```
-
-::: callout-note
-Cell level options are here indicated with `%%|` instead of `#|`!
-:::
-
-Useful links:
-
-- [https://mermaid-js.github.io/mermaid/#/](https://mermaid-js.github.io/mermaid/#/)
-- [https://mermaid.live](https://mermaid.live)
-
-
-### Graphviz
-
-The [Graphviz](https://graphviz.org/) layout programs take descriptions of graphs in a simple text language and make diagrams in useful formats. Graphviz has many useful features for concrete diagrams, such as options for colors, fonts, tabular node layouts, line styles, hyperlinks, and custom shapes (see @fig-dot-diagram).
-
-```{dot}
-//| label: fig-dot-diagram
-//| fig-cap: "An example for a diagram made with Graphviz."
-
-graph G {
-  layout=neato
-  run -- intr;
-  intr -- runbl;
-  runbl -- run;
-  run -- kernel;
-  kernel -- zombie;
-  kernel -- sleep;
-  kernel -- runmem;
-  sleep -- swap;
-  swap -- runswap;
-  runswap -- new;
-  runswap -- runmem;
-  new -- runmem;
-  sleep -- runmem;
-}
-```
-
-::: callout-note
-Cell level options are here indicated with `//|`!
-:::
-
-
 # Adding citations and bibliography
 
 Link a `.bib` document via the YAML header, and the bibliography will be printed at the end. The default bibliography style is provided in the `sage-harvard.csl` file (do not delete), which adopts the [SAGE Harvard](https://uk.sagepub.com/sites/default/files/sage_harvard_reference_style_0.pdf) reference style.
@@ -353,7 +304,7 @@ There is also the package [citr](https://github.com/crsh/citr) which I highly re
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to create a separate bibliography file named 'packages.bib' with all package references has already been added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
 
 ## Examples for footnotes
 

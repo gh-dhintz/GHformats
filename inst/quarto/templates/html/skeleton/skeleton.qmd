@@ -1,14 +1,10 @@
 ---
 title: "Document title"
 subtitle: "Subtitle"
-description: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut elit odio. Donec fermentum tellus neque, vitae fringilla orci pretium vitae. Fusce maximus finibus facilisis. Donec ut ullamcorper turpis.
 date: "01/04/2022"
 author:
-  - name: Author name 
-    url: https://www.biologie.uni-hamburg.de/en.html
-    affiliation: Universität Hamburg
-    affiliation-url: https://www.uni-hamburg.de/en.html
+  - name: Author name
+    affiliation: Guardant Health
 citation:
   url: https://example.com/summarizing-output
 license: "CC BY-SA" 
@@ -68,7 +64,7 @@ library(knitr)
 #| include: false
 # Automatically create a bib database for R packages used above
 knitr::write_bib(
-  x = c(.packages(), 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
@@ -309,7 +305,7 @@ Cell level options are here indicated with `%%|` instead of `#|`!
 :::
 
 ```{mermaid}
-%%| label: fig-mermaid-diagram
+%%| label: fig-mermaid-diagram2
 %%| fig-cap: A sequence diagram based on Mermaid.
 %%| fig-width: 6
 
@@ -392,7 +388,7 @@ There is also the package [citr](https://github.com/crsh/citr) which I highly re
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to generate a bibliography file including all package references has been already added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
 
 
 <!-- Pandoc will automatically generate a list of works cited and place it in the document if the style calls for it. It will be placed in a div with the id refs if one exists: -->

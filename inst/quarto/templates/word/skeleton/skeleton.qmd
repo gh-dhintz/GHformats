@@ -16,7 +16,7 @@ format:
     toc-depth: 3
     toc-title: Contents
     number-sections: true
-    reference-doc: "uhh-template.docx"
+    reference-doc: "gh-template.docx"
     crossref: 
       chapters: false     # set to 'true' if figure numbering should follow subsections
       fig-prefix: Fig.    # (default is 'Figure'; adjust if language is German)
@@ -41,7 +41,7 @@ library(knitr)
 #| include: false
 # Automatically create a bib database for R packages used above
 knitr::write_bib(
-  x = c(.packages(), 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
@@ -65,7 +65,7 @@ Configure the YAML header including the following elements:
 - *format - docx*: In this template many of the Quarto options for Word output are listed in the YAML header. If you want to know more about these settings I recommend the [MS Word format reference](https://quarto.org/docs/reference/formats/docx.html) for a complete list of available options. For instance, you can adjust the figure and table references with *fig-title*, *tbl-title*, *fig-prefix*, and *tbl-prefix*.
 - *execute*: Global options for customizing output from executed code are specified within this execute key.
 
-This Quarto template uses a 'uhh-template.docx' Word file, which is based on the [standard template file](https://www.kus.uni-hamburg.de/themen/oeffentlichkeitsarbeit/corporate-design/vorlagen.html) of the University of Hamburg (UHH) except for the font type, which is by default 'Helvetica'.  If you are associated with the UHH you are allowed to use the University's own font style 'TheSansUHH'. You can choose between both fonts when running the function, e.g., `UHHformats::create_quarto_doc(dirname = "your_word_doc", template = "word", font = "TheSansUHH")`.
+This Quarto template uses a 'gh-template.docx' Word file with Guardant Health branding, with the font type by default set to 'HelveticaNeue'.
 
 If you feel like using your own template or the standard Word template (i.e. the Normal.dot file), simply provide the path to your file or comment/delete this line, respectively. 
 
@@ -356,7 +356,7 @@ There is also the package [citr](https://github.com/crsh/citr) which I highly re
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to create a separate bibliography file named 'packages.bib' with all package references has already been added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr]. 
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the R packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr]. 
 
 
 ## Examples for footnotes
