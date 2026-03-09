@@ -1,4 +1,4 @@
-#' UHHformats: R Markdown/Quarto templates designed for the University of Hamburg
+#' GHformats: R Markdown/Quarto templates designed for Guardant Health
 #'
 #' A package for creating HTML, PDF and Microsoft Word documents, reports,
 #' and cheat sheets using either R Markdown or now also Quarto.
@@ -38,5 +38,5 @@
 #'     Markdown file.
 #' }
 #' @docType package
-#' @name UHHformats
+#' @name GHformats
 NULL
