@@ -2,7 +2,7 @@
 #'
 #' This function serves as wrapper for \code{\link[bookdown]{word_document2}}, with a
 #' custom Pandoc Word template and different knitr default values (e.g., \code{number_sections = FALSE}).
-#' The Word template is based on the standard template of the University of Hamburg.
+#' The Word template is based on the standard template of Guardant Health.
 #'
 #' @param toc logical; \code{TRUE} to include a table of contents in the output.
 #' @param toc_depth integer; Depth of headers to include in table of contents. Default set to 4.
@@ -15,12 +15,11 @@
 #'        "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", and "haddock".
 #'        Pass \code{NULL} to prevent syntax highlighting.
 #' @param reference_docx character; use the specified file as a style reference in producing a docx file.
-#'        The 'uhh-template.docx' template implements most of the standard requirement at the UHH biology
-#'        department. If you prefer another template, pass the file name to this argument or simply use
+#'        The 'gh-template.docx' template implements most of the standard requirements at Guardant Health.
+#'        If you prefer another template, pass the file name to this argument or simply use
 #'        'default' to use your standard Word template.
-#' @param font character; default font in the template file is "Helvetica"; for members of the UHH there is also
-#'        the font "TheSansUHH" available. If you want to provide your own Word template, there is no
-#'        need to set any font here.
+#' @param font character; default font in the template file is "HelveticaNeue". If you want to provide
+#'        your own Word template, there is no need to set any font here.
 #' @param language character; the document language. If set to "de" (ISO code for German), a configuration file
 #'        named '_bookdown.yml' will be copied (unless this file exists already) to the directory of the R
 #'        Markdown file, which language specification for the table and figure legends as well as for the
@@ -30,7 +29,7 @@
 #' @param pandoc_args Additional command line options to pass to pandoc.
 #' @param ... Additional parameters to pass to \code{\link[bookdown]{pdf_book}}.
 #'
-#' @return A modified \code{\link[rmarkdown]{word_document}} based on a UHH Word template.
+#' @return A modified \code{\link[rmarkdown]{word_document}} based on a Guardant Health Word template.
 #'
 #' @import bookdown
 #' @import knitr
@@ -43,15 +42,15 @@
 #'  output: UHHthesis::word_doc
 #' }
 word_doc <- function(toc = FALSE, toc_depth = 4, number_sections = FALSE,
-  highlight = "default", reference_docx = "uhh-template", font = "Helvetica",
+  highlight = "default", reference_docx = "gh-template", font = "HelveticaNeue",
   language = "en", dpi = 144, pandoc_args = NULL, ...) {
 
   # Font setting
-  if (!font %in% c("Helvetica", "TheSansUHH", "other")) {
-    stop('Set the font option to "Helvetica", "TheSansUHH" or "other".')
+  if (!font %in% c("Helvetica", "HelveticaNeue", "other")) {
+    stop('Set the font option to "Helvetica", "HelveticaNeue", or "other".')
   }
-  if (font == "Helvetica") filename <- "uhh-template-helvetica.docx"
-  if (font == "TheSansUHH") filename <- "uhh-template-thesansuhh.docx"
+  if (font == "Helvetica") filename <- "gh-template-helvetica.docx"
+  if (font == "HelveticaNeue") filename <- "gh-template-HelveticaNeue.docx"
 
   # Language setting
   if (!language %in% c("en", "de")) {
@@ -66,7 +65,7 @@ word_doc <- function(toc = FALSE, toc_depth = 4, number_sections = FALSE,
     }
   }
 
-  if (reference_docx == "uhh-template") {
+  if (reference_docx == "gh-template") {
     base <- rmd_word_document_format(
       format         = "word_doc",
       filename       = filename,

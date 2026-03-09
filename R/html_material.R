@@ -6,8 +6,8 @@
 #' The design is an adaptation from the Material design theme
 #' for Bootstrap 3 project: \url{https://github.com/FezVrasta/bootstrap-material-design}.
 #' The HTML, JavaScript, CSS, and R code were originally developed by Julien Barnier
-#' in the \href{https://github.com/juba/rmdformats}{rmdformats} package and only slightly
-#' modified here to tailor it to the 'Data Science in Biology' program at the UHH.
+#' in the \href{https://github.com/juba/rmdformats}{rmdformats} package and adapted
+#' for Guardant Health branding. This template uses Roboto font (embedded web fonts).
 #'
 #' @param highlight Syntax highlighting style. Supported styles include
 #'   "default", "tango", "pygments", "kate" (default), "monochrome", "espresso",
@@ -52,7 +52,7 @@ html_material <- function(
   cards = TRUE, lightbox = TRUE, thumbnails = TRUE, gallery = TRUE,
   fig_width = 6, fig_height = 6, fig_caption = TRUE,
   use_bookdown = TRUE, md_extensions = NULL,
-  mathjax = "UHHformats", pandoc_args = NULL, ... ) {
+  mathjax = "GHformats", pandoc_args = NULL, ... ) {
 
   html_template(
     template_name = "html_material",
@@ -83,13 +83,13 @@ html_material <- function(
 }
 
 
-##### This was also adjusted to link to the UHHformats file names:
+##### This was also adjusted to link to the GHformats file names:
 # bootstrap material design js and css
 # https://github.com/FezVrasta/bootstrap-material-design
 html_dependency_bootstrap_material <- function() {
   htmltools::htmlDependency(name = "bootstrap_material",
-    version = utils::packageVersion("UHHformats"),
-    src = system.file("templates/html_material/lib", package = "UHHformats"),
+    version = utils::packageVersion("GHformats"),
+    src = system.file("templates/html_material/lib", package = "GHformats"),
     script = c("material.min.js", "ripples.min.js"),
     stylesheet = c("bootstrap-material-design.min.css", "ripples.min.css"))
 }
@@ -97,8 +97,8 @@ html_dependency_bootstrap_material <- function() {
 # material js and css
 html_dependency_material <- function() {
   htmltools::htmlDependency(name = "html_material",
-    version = utils::packageVersion("UHHformats"),
-    src = system.file("templates/html_material", package = "UHHformats"),
+    version = utils::packageVersion("GHformats"),
+    src = system.file("templates/html_material", package = "GHformats"),
     script = "html_material.js",
     stylesheet = "html_material.css")
 }

@@ -14,10 +14,9 @@
 #' @param highlight character; syntax highlighting style. Supported styles include "default",
 #'        "tango", "pygments", "kate" (default here), "monochrome", "espresso", "zenburn", and "haddock".
 #'        Pass \code{NULL} to prevent syntax highlighting.
-#' @param font character; default font is "Helvetica"; for members of the UHH there is also the font
-#'        "TheSansUHH" available. If you want to use another font, simply use the setting "other" and
-#'        replace the .ttf files for regular, italic, bold, and bold-italic font with your own files
-#'        (should be named EXACTLY as the template font files).
+#' @param font character; default font is "HelveticaNeue". If you want to use another font, simply
+#'        use the setting "other" and replace the .ttf files for regular, italic, bold, and bold-italic
+#'        font with your own files (should be named EXACTLY as the template font files).
 #' @param citation_package character; the \LaTeX package to process "citations", "natbib" (default) or
 #'        "biblatex". Use "none" if neither package is to be used.
 #' @param latex_engine character; LaTeX engine for producing PDF output. Options
@@ -57,14 +56,14 @@
 #' @export
 #'
 pdf_report <- function(toc = TRUE,toc_depth = 5, number_sections = TRUE,
-  highlight = "kate", font = "Helvetica", citation_package = "natbib",
+  highlight = "kate", font = "HelveticaNeue", citation_package = "natbib",
   latex_engine = "xelatex", ...) {
 
   # Font setting
-  if (!font %in% c("Helvetica", "TheSansUHH", "other")) {
-    stop('Set the font option to "Helvetica", "TheSansUHH" or "other".')
+  if (!font %in% c("Helvetica", "HelveticaNeue", "other")) {
+    stop('Set the font option to "Helvetica", "HelveticaNeue", or "other".')
   }
-  if (font %in% c("Helvetica", "TheSansUHH")) {
+  if (font %in% c("Helvetica", "HelveticaNeue")) {
     copy_font_files("pdf_report", font)
   }
 

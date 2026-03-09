@@ -20,7 +20,7 @@
 #'
 #' \preformatted{
 #' ---
-#' knit: UHHformats::rmd_to_jupyter
+#' knit: GHformats::rmd_to_jupyter
 #' ---
 #' }
 #' Since everything from the YAML header will be cut out when converting the code, any title,

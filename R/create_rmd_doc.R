@@ -35,12 +35,12 @@ create_rmd_doc <- function(dirname = "new-doc", template = "html_simple") {
   # Get all file names in the /skeleton folder
   list_of_files <- list.files(
     system.file(file.path("rmarkdown", "templates", template_dir, "skeleton"),
-      package = "UHHformats"))
+      package = "GHformats"))
 
   # Copy all single files and subfolders into new path
   for (i in seq_along(list_of_files)) {
     file.copy(system.file(file.path("rmarkdown", "templates", template_dir, "skeleton", list_of_files[i]),
-      package = "UHHformats"), file.path(tmp_dir), recursive = TRUE)
+      package = "GHformats"), file.path(tmp_dir), recursive = TRUE)
   }
 
   file.rename(tmp_dir, dirname)

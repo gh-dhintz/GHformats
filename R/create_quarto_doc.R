@@ -2,31 +2,30 @@
 #'
 #' \code{create_quarto_doc} creates a new subdirectory inside the current directory, which will
 #' contain the ready-to-use Quarto file and all associated files. The Word and PDF templates are
-#' based on the standard template of the University of Hamburg.
+#' based on the standard template of Guardant Health.
 #'
 #' @param dirname character; the name of the directory to create.
 #' @param template character; the template type to use. Choose "html" (default),
 #'   "pdf_simple", "pdf_report", or "word".
-#' @param font The font family of the document. Default is "Helvetica" (i.e. Helvetica Neue).
-#'   For members of the UHH, there is also the font "TheSansUHH" available for the PDF and Word document.
+#' @param font The font family of the document. Default is "HelveticaNeue" for PDF and Word documents.
+#'   Note: HTML templates use Roboto font (embedded web fonts) and do not use this parameter.
 #'
 #' @examples
 #' \dontrun{
 #'  # Create template for HTML document
 #'  create_quarto_doc(dirname = "my_html_doc", template = "html")
-#'  # Create template for simple PDF document using the default font 'Helvetica'
+#'  # Create template for simple PDF document using the default font 'HelveticaNeue'
 #'  create_quarto_doc(dirname = "my_pdf_doc", template = "pdf_simple")
-#'  # Create template for Word document using the University's
-#'  # font 'TheSansUHH'
-#'  create_quarto_doc(dirname = "my_word_doc", template = "word", font = "TheSansUHH")
+#'  # Create template for Word document
+#'  create_quarto_doc(dirname = "my_word_doc", template = "word")
 #' }
 #' @export
 
 create_quarto_doc <- function(dirname = "new-doc", template = "html",
-  font = "Helvetica") {
+  font = "HelveticaNeue") {
 
-  if (!font %in% c("Helvetica", "TheSansUHH", "other")) {
-    stop('Set the font option to "Helvetica" or "TheSansUHH".')
+  if (!font %in% c("Helvetica", "HelveticaNeue", "other")) {
+    stop('Set the font option to "Helvetica", "HelveticaNeue", or "other".')
   }
 
   templates <- c("html", "pdf_simple", "pdf_report", "word")
@@ -42,12 +41,12 @@ create_quarto_doc <- function(dirname = "new-doc", template = "html",
   # Get all file names in the template folder
   list_of_files <- list.files(
     system.file(file.path("quarto", "templates", template_dir, "skeleton"),
-      package = "UHHformats"))
+      package = "GHformats"))
 
   # Copy all single files and subfolders in skeleton/ into new path
   for (i in seq_along(list_of_files)) {
     file.copy(system.file(file.path("quarto", "templates", template_dir, "skeleton", list_of_files[i]),
-      package = "UHHformats"), file.path(tmp_dir), recursive = TRUE)
+      package = "GHformats"), file.path(tmp_dir), recursive = TRUE)
   }
 
 
@@ -57,11 +56,11 @@ create_quarto_doc <- function(dirname = "new-doc", template = "html",
   }
 
   if (template == "word") {
-    if (font == "Helvetica") filename <- "uhh-template-helvetica.docx"
-    if (font == "TheSansUHH") filename <- "uhh-template-thesansuhh.docx"
+    if (font == "Helvetica") filename <- "gh-template-helvetica.docx"
+    if (font == "HelveticaNeue") filename <- "gh-template-HelveticaNeue.docx"
     file.copy(
       from = find_resource("word", file = filename, type = "quarto"),
-      to = file.path(tmp_dir, "uhh-template.docx")
+      to = file.path(tmp_dir, "gh-template.docx")
     )
   }
 
