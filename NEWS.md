@@ -1,4 +1,4 @@
-# UHHformats 1.0.0
+# GHformats 1.0.0
 
 * Bachelor and Master thesis templates migrated to their own package named 'UHHthesis'.
 * Small design makeover of various templates.

@@ -8,12 +8,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# UHHformats <img src="vignettes/images/UHHformats_logo.png" align="right" width="90" height="100" />
+# GHformats
 
-<!-- [![R-CMD-check](https://github.com/saskiaotto/UHHformats/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/saskiaotto/UHHformats/actions/workflows/check-standard.yaml) -->
+<!-- [![R-CMD-check](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml) -->
 
+## Attribution
 
-This R package provides ready-to-use R Markdown and **now also Quarto templates** for HTML, PDF and Microsoft Word output formats, which are used within the Department of Biology, University of Hamburg (German: Universität Hamburg, also referred to as **UHH**), and its *Data Science in Biology* program. The package aims to encourage reproducible research using simple Markdown syntax while embedding all of the R code to produce plots and analyses as well. Included in the package are templates for 
+**GHformats** is a derivative work based on the [GHformats](https://github.com/gh-dhintz/GHformats) package by Saskia Otto, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This package has been adapted and rebranded for use at Guardant Health.
+
+**Original work**: GHformats by Saskia Otto
+**Derivative work**: GHformats by Daniel Hintz
+**License**: CC BY 4.0 (Creative Commons Attribution 4.0 International)
+
+---
+
+This R package provides ready-to-use R Markdown and **Quarto templates** for HTML, PDF and Microsoft Word output formats, which are used within Guardant Health. The package aims to encourage reproducible research using simple Markdown syntax while embedding all of the R code to produce plots and analyses as well. Included in the package are templates for 
 
 - student assignments
     - [R Markdown: Simple PDF document in English (default) or German - `pdf_simple`]
@@ -23,7 +32,7 @@ This R package provides ready-to-use R Markdown and **now also Quarto templates*
     - [R Markdown: HTML document (with bootstrap design 'Material') - `html_material`]
     - [Quarto: Simple HTML output format - `html`]
 - PDF reports
-    - [R Markdown: UHH report in in English (default) or German - `pdf_report`]
+    - [R Markdown: Guardant Health report in English (default) or German - `pdf_report`]
     - [Quarto: Output format for a PDF report in English (default) or German - `pdf_report`]
 - cheat sheets
     - [R Markdown: Output format for a simple cheat sheet (PDF) - `pdf_cheatsheet`]
@@ -33,13 +42,13 @@ This R package provides ready-to-use R Markdown and **now also Quarto templates*
 - conversions from R Markdown documents to Jupyter Notebooks
     - [R Markdown: Jupyter Notebook output format - `rmd_to_jupyter`]
 
-The default font for all templates is 'Helvetica' but the font can be replaced with the University's own font style 'TheSans UHH' in the PDF and Word templates. If you are associated to the UHH you are allowed to use this font. Most templates include further the UHH logo and have adopted the UHH corporate design, but the logo can easily be replaced in the YAML header and also the style can be modified, by e.g. adding your own CSS stylesheet in the YAML header of the HTML template. Hence, these templates are not limited to UHH students and employees. 
+The default font for PDF and Word templates is 'HelveticaNeue', with 'Helvetica' available as an alternative. HTML templates use Roboto font (embedded web fonts). Most templates include the Guardant Health logo and branding, but the logo can easily be replaced in the YAML header and also the style can be modified, by e.g. adding your own CSS stylesheet in the YAML header of the HTML template. 
 
 Many templates were developed based on other inspiring templates and R packages, which are mentioned below. **To help getting started, all templates contain already some example text and code** for formatting text, writing equations, creating tables and figures with cross-references and including references.
 
 **NEW in this version**: 
 
-- The templates for the Bachelor and Master thesis have been moved into a separate R package named *UHHthesis* (see https://github.com/saskiaotto/UHHthesis/). 
+- Templates focus on reports and analyses for data science workflows. 
 - Small design makeover of various templates.
 - A new Word template for R Markdown was added.
 - This package also contains now templates for Quarto documents that generate HTML, PDF, and MS Word output (see [Quarto template gallery]). [Quarto](https://quarto.org) is a next generation version of R Markdown from RStudio, which supports more languages and environments such as Python, Julia, or Jupyter. Like R Markdown, Quarto uses Knitr to execute R code, and is therefore able to render most existing Rmd files without modification. 
@@ -51,7 +60,7 @@ Install the development version from GitHub using the *remotes* package:
 
 ```{r, eval = FALSE}
 if (!require("remotes")) install.packages("remotes")
-remotes::install_github("uham-bio/UHHformats", build_vignettes = TRUE)
+remotes::install_github("gh-dhintz/GHformats", build_vignettes = TRUE)
 ```
 
 Make sure that you also have the latest versions of the R packages *rmarkdown* and *knitr* installed. For some R Markdown templates you also need the R package *bookdown*. 
@@ -76,7 +85,7 @@ if (!require("quarto")) install.packages("quarto")
 
 #### Creating a new document and rendering it within R Studio
 
-Once you installed the package you might need to close and re-open R Studio to see the `UHHformats` 
+Once you installed the package you might need to close and re-open R Studio to see the `GHformats` 
 templates listed.
 
 1. Choose **File** > **New File** > **R Markdown**, then select **From Template**.
@@ -98,14 +107,14 @@ You can create a new directory inside your current directory, including the read
 Use, for instance,
 
 ```{r, eval=FALSE}
-UHHformats::create_rmd_doc(dirname = "new_doc", template = "pdf_report")
+GHformats::create_rmd_doc(dirname = "new_doc", template = "pdf_report")
 ```
 to generate a report-like PDF output.
 
 Alternatively, use 
 
 ```{r, eval=FALSE}
-rmarkdown::draft("new_doc.Rmd", template = "html_simple", package = "UHHformats")
+rmarkdown::draft("new_doc.Rmd", template = "html_simple", package = "GHformats")
 ```
 
 These functions will automatically create the subdirectory and place the generated .Rmd file and all associated files and folders into it.
@@ -122,13 +131,13 @@ rmarkdown::render("new-doc.Rmd")
 
 ### Quarto documents 
 
-Quarto templates are currently not supported in RStudios IDE. Until that changes, you can access these templates with the `create_quarto_doc()` function. The function has three arguments: `dirname` for the name of the subdirectory (and .qmd file), `template` for the output types (choose from 'html', 'pdf_simple', 'pdf_report' or 'word') and `font` for the font type. If the output format is PDF or Word you can choose between the 'Helvetica' and 'TheSansUHH' font. The function will copy the .qmd files and associated files and folders into this new subdirectory
+Quarto templates are currently not supported in RStudios IDE. Until that changes, you can access these templates with the `create_quarto_doc()` function. The function has three arguments: `dirname` for the name of the subdirectory (and .qmd file), `template` for the output types (choose from 'html', 'pdf_simple', 'pdf_report' or 'word') and `font` for the font type. If the output format is PDF or Word you can choose between 'HelveticaNeue' (default) and 'Helvetica'. The function will copy the .qmd files and associated files and folders into this new subdirectory
 
 Use, for instance,
 
 ```{r, eval=FALSE}
-UHHformats::create_qmd_doc(dirname = "my_html_doc", template = "html")
-UHHformats::create_qmd_doc(dirname = "my_pdf_doc", template = "pdf_simple", font = "TheSansUHH")
+GHformats::create_qmd_doc(dirname = "my_html_doc", template = "html")
+GHformats::create_qmd_doc(dirname = "my_pdf_doc", template = "pdf_simple")
 ```
 
 to generate a HTML page with the browsers default font or a simple PDF document with the University's own font.
@@ -168,7 +177,7 @@ https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
 
 ### R Markdown: HTML document (simple design) - `html_simple`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_html_simple.html).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_html_simple.html).
 
 This template converts the R Markdown file into a simple HTML file with a fixed table of content in the upper right corner and a code folding button similar to R notebooks, which is useful in student assignments.
 
@@ -182,7 +191,7 @@ title: "Title"
 author: "Name"
 date: "`r Sys.Date()`"
 output:
-  UHHformats::html_simple:
+  GHformats::html_simple:
     highlight: kate
     code_folding: show
     use_bookdown: true
@@ -201,7 +210,7 @@ knitr::include_graphics("vignettes/images/img_rmd_html_simple.png")
 
 ### R Markdown: HTML document (with bootstrap design 'Material') - `html_material`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_html_material.html).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_html_material.html).
 
 This template converts the R Markdown file into an HTML output file that has a navigation bar on the left and in which the different sections (defined by setting header level 1 (#)) are displayed on individual pages or cards. If you want all sections on a single page, add the `cards: false` option in the YAML header. The design is an adaptation from the Material design theme for Bootstrap 3 project: https://github.com/FezVrasta/bootstrap-material-design. Also in this template, the HTML, JavaScript, CSS, and R code were originally developed by Julien Barnier in the [rmdformats](https://github.com/juba/rmdformats) package and only slightly modified here to tailor it to the *Data Science in Biology* program at the UHH.
 
@@ -224,11 +233,11 @@ package, i.e.
 
 ### R Markdown: Simple Microsoft Word document - `word_doc`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_word_doc.docx).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_word_doc.docx).
 
 This template converts the R Markdown file into a Microsoft Word document, which is suitable for student assignments or project reports. The underlying function `word_doc` is a wrapper of `bookdown::word_document2`. By using internally *bookdown* the language settings for figure legends and table captions can be automatically changed from English to German (or any other language).
 
-In the YAML header of the R Markdown template, you can easily customize the language, font, the bibliography style or whether to include a table of content and the title of it. By default `word_doc` uses a 'uhh-template' template file, which is based on the [standard template file](https://www.kus.uni-hamburg.de/themen/oeffentlichkeitsarbeit/corporate-design/vorlagen.html) of the University of Hamburg (UHH) except for the font type, which is set to 'Helvetica'. If you are associated to the UHH you can also use the University's own font "TheSansUHH". In that case replace *font = "Helvetica"* with *font = "TheSansUHH"*. 
+In the YAML header of the R Markdown template, you can easily customize the language, font, the bibliography style or whether to include a table of content and the title of it. By default `word_doc` uses a 'gh-template' template file with Guardant Health branding, with the font type set to 'HelveticaNeue'. 
 
 If you feel like using your own template or the standard Word template (i.e. the Normal.dot file) simply provide the path to your file or write "default" for the latter case (*reference_docx: "default"*). You can also use another font by using the setting *font = "other"* and replacing the 'font_XXX.ttf' files in the working directory with your own files. Please note, that you have to name these files exactly as the template font files.
 
@@ -242,7 +251,7 @@ knitr::include_graphics("vignettes/images/img_rmd_word_doc.png")
 
 ### R Markdown: Simple PDF document in English (default) or German - `pdf_simple`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_pdf_simple.pdf).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_pdf_simple.pdf).
 
 This template converts the R Markdown file into a simple PDF/LaTeX - based document structured as an article, which is suitable for student assignments. The underlying function `pdf_simple` is a wrapper of `rmarkdown::pdf_document`. Similar to the `pdf_report` template, the YAML header offers various options to adjust the layout of the document.
 
@@ -254,9 +263,9 @@ knitr::include_graphics("vignettes/images/img_rmd_pdf_simple.png")
 
 
 
-### R Markdown: UHH report in in English (default) or German - `pdf_report`
+### R Markdown: Guardant Health report in English (default) or German - `pdf_report`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_pdf_report.pdf).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_pdf_report.pdf).
 
 This template converts the R Markdown file into a PDF/LaTeX - based report suitable for project reports and student assignments. The underlying function `pdf_report` is a wrapper of `rmarkdown::pdf_document` and based on the [rticles](https://github.com/rstudio/rticles) package that
 provides templates for various journal articles. The Pandoc LaTeX template and the report layout are inspired by INWTlab's [ireports](https://github.com/INWTlab/ireports) package.
@@ -273,12 +282,12 @@ german: false
 bibliography: bibfile.bib       
 bibliographystyle: bibstyle.bst
 params:
-  cover: images/cover.png
-  title_logo_left: images/uhh_logo.png
-  title_logo_right: images/min_logo.png
-  logo_small: images/logo_icon.png
+  cover: images/GH_cover.png
+  title_logo_left: images/GH_logo.png
+  title_logo_right: images/GH_secondary_logo.png
+  logo_small: images/GH_logo_icon.png
 output:
-  UHHformats::pdf_report:
+  GHformats::pdf_report:
     df_print: kable
 ---
 ```
@@ -292,7 +301,7 @@ knitr::include_graphics("vignettes/images/img_rmd_pdf_report.png")
 
 ### R Markdown: Output format for a simple cheat sheet (PDF) - `pdf_cheatsheet`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_pdf_cheatsheet.pdf).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_pdf_cheatsheet.pdf).
 
 Template for creating a simple cheat sheet. The PDF output format will be A4 sized and horizontal. You can define whether the cheat sheet should have 2,3,4 or more columns. Also the text and box 
 colors and font size can be adjusted. The [LaTeX template by Sarah Lang](https://www.overleaf.com/latex/templates/colourful-cheatsheet-template/qdsshbjktndd) served here as inspiration for the layout and code.
@@ -307,7 +316,7 @@ knitr::include_graphics("vignettes/images/img_rmd_pdf_cheatsheet.png")
 
 ### R Markdown: Jupyter Notebook output format - `rmd_to_jupyter`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_rmd_to_jupyter.ipynb).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_rmd_to_jupyter.ipynb).
 
 While I'm a strong advocate of R Studio and R Studio server as IDE for R, there are times where [Juypter Notebook][https://jupyter.org/] is clearly the better option. Not only that Jupyter Notebooks allows running R directly in the browser without the installation of additional programs when using a remote Notebook server - this is in fact what R Studio Server is also for - but students can use it from any mobile device, including smartphones. This is particularly useful during lectures, when aiming to engage students more.
 
@@ -324,7 +333,7 @@ The only thing you need in the YAML header is therefore:
 
 ```
 ---
-knit: UHHformats::rmd_to_jupyter
+knit: GHformats::rmd_to_jupyter
 ---
 ```
 
@@ -349,12 +358,12 @@ knitr::include_graphics("vignettes/images/img_rmd_to_jupyter.png")
 
 ### Quarto: Simple HTML output format - `html`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_quarto_html.html).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_quarto_html.html).
 
-This template converts the Quarto file into a simple HTML file with a fixed navigation bar on the left side including the UHH logo. To create a subdirecory including the Quarto template file type into the console
+This template converts the Quarto file into a simple HTML file with a fixed navigation bar on the left side including the Guardant Health logo. To create a subdirectory including the Quarto template file type into the console
 
 ```{r, eval=FALSE}
-UHHformats::create_quarto_doc(dirname = "choose_a_name", template = "html")
+GHformats::create_quarto_doc(dirname = "choose_a_name", template = "html")
 ```
 
 Many of the Quarto options for HTML output are listed in the YAML header. If you want to know more about these settings I recommend the [HTML format reference](https://quarto.org/docs/reference/formats/html.html) for a complete list of available options.
@@ -370,13 +379,13 @@ knitr::include_graphics("vignettes/images/img_quarto_html.png")
 
 ### Quarto: Simple Microsoft Word output format - `word`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_quarto_word.docx).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_quarto_word.docx).
 
-Similar to the R Markdown `word_doc` template, this Quarto template uses a 'uhh-template.docx' Word file, which is based on the [standard template file](https://www.kus.uni-hamburg.de/themen/oeffentlichkeitsarbeit/corporate-design/vorlagen.html) of the University of Hamburg (UHH) except for the font type, which is by default 'Helvetica'. You can choose the font in the template by typing into the console
+Similar to the R Markdown `word_doc` template, this Quarto template uses a 'gh-template.docx' Word file with Guardant Health branding, with the font type by default set to 'Helvetica'. You can choose the font in the template by typing into the console
 
 ```{r, eval=FALSE}
-UHHformats::create_qmd_doc(dirname = "choose-a-name", 
-  template = "word", font = "TheSansUHH")
+GHformats::create_qmd_doc(dirname = "choose-a-name", 
+  template = "word")
 ```
 
 More information is provided in the .qmd file. If you need additional help, go to Quarto's MS Word documentation: [https://quarto.org/docs/output-formats/ms-word.html](https://quarto.org/docs/output-formats/ms-word.html) If you feel like using your own template or the standard Word template (i.e. the Normal.dot file), simply provide the path to your file under `reference-doc:` or comment/delete this line, respectively. 
@@ -388,12 +397,12 @@ knitr::include_graphics("vignettes/images/img_quarto_word.png")
 
 ### Quarto: Output format for a simple PDF document in English (default) or German - `pdf_simple`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_quarto_pdf_simple.pdf).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_quarto_pdf_simple.pdf).
 
-This template converts the Quarto file into a simple PDF/LaTeX - based document with a similar design than the R Markdown template `pdf_simple`. You can choose here between two font types: 'Helvetica' (default) and the University's own font 'TheSansUHH'. To create a subdirecory including the Quarto template file, type into the console
+This template converts the Quarto file into a simple PDF/LaTeX - based document with a similar design than the R Markdown template `pdf_simple`. You can choose here between two font types: 'HelveticaNeue' (default) and 'Helvetica'. To create a subdirectory including the Quarto template file, type into the console
 
 ```{r, eval=FALSE}
-UHHformats::create_quarto_doc(dirname = "choose-a-name", 
+GHformats::create_quarto_doc(dirname = "choose-a-name", 
   template = "pdf_simple", font = "Helvetica")
 ```
 
@@ -406,12 +415,12 @@ knitr::include_graphics("vignettes/images/img_quarto_pdf_simple.png")
 
 ### Quarto: Output format for a PDF report in English (default) or German - `pdf_report`
 
-→ for an example file see also [here](https://github.com/saskiaotto/UHHformats/blob/master/resources/examples/demo_quarto_pdf_report.pdf).
+→ for an example file see also [here](https://github.com/saskiaotto/GHformats/blob/master/resources/examples/demo_quarto_pdf_report.pdf).
 
 If you want to have more a report style document choose as template 'pdf_report':
 
 ```{r, eval=FALSE}
-UHHformats::create_quarto_doc(dirname = "choose-a-name", 
+GHformats::create_quarto_doc(dirname = "choose-a-name", 
   template = "pdf_report", font = "Helvetica")
 ```
 
