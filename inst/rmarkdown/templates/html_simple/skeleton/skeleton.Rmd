@@ -8,7 +8,7 @@ bibliography: [bib/references.bib, bib/packages.bib] # Path to bibliography file
 csl: bib/sage-harvard.csl                            # Path to reference style file
 ### Settings for rendering the document:
 output:
-  UHHformats::html_simple:
+  GHformats::html_simple:
     highlight: kate
     code_folding: show
     number_sections: false
@@ -29,7 +29,7 @@ library(knitr)
 ```{r generate-package-refs, include=FALSE}
 # Automatically create a bib database for R packages loaded above
 knitr::write_bib(
-  x = c(.packages(), 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
@@ -148,7 +148,7 @@ There is also the package [citr](https://github.com/crsh/citr), which I highly r
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to generate a bibliography file including all package references has been already added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr].
 
 
 ## References

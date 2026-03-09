@@ -12,10 +12,10 @@ csl: bib/sage-harvard.csl                            # Path to reference style f
 
 ### Settings for rendering the document:
 output: 
-  UHHformats::word_doc:
+  GHformats::word_doc:
     toc: false
     language: "en"  # alternative: "de" for German
-    font: "Helvetica" # alternative: "TheSansUHH" 
+    font: "HelveticaNeue" # alternative: "Helvetica" 
 ### Uncomment the next line if 'language: "de" ' and 'toc: true'
 # toc-title: "Inhaltsverzeichnis"    
 ---
@@ -35,7 +35,7 @@ library(knitr)
 ```{r generate-package-refs, include=FALSE}
 # Automatically create a bib database for R packages used above
 knitr::write_bib(
-  x = c(.packages(), 'bookdown', 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'bookdown', 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
@@ -55,18 +55,18 @@ Configure the YAML header including the following elements:
 - *abstract*: The abstract will be shown right after the title in smaller font size. 
 - *bibliography*: A path to the bibliography file to use for references (BibTeX *.bib* file). The current file includes 3 dummy references; either insert your references into this file or replace the file with your own.
 - *csl*: The style is provided in the 'sage-harvard.csl' file, which adopts the [SAGE Harvard](https://uk.sagepub.com/sites/default/files/sage_harvard_reference_style_0.pdf) reference style. Just leave the file as it is.
-- *output*: The nested fields for the output field are based on the arguments of the output function. Since *UHHformats::word_doc* is based on *bookdown::word_document2*, see its help page for more options. Current default settings are
+- *output*: The nested fields for the output field are based on the arguments of the output function. Since *GHformats::word_doc* is based on *bookdown::word_document2*, see its help page for more options. Current default settings are
     - *toc: FALSE*
     - *toc_depth: 4*
     - *number_sections: FALSE*
     - *highlight:  "default"*
-    - *reference_docx: "uhh-template"*
+    - *reference_docx: "gh-template"*
     - *font = "Helvetica"*
     - *language: "en"*
     - *dpi: 144*
 * *toc-title*: If the setting is *toc: TRUE*, MS Word automatically generates a table of content with an English title. If the language is German (*language: "de"*) you should specify here a German title.
 
-By default *UHHformats::word_doc* uses a 'uhh-template.docx' template file, which is based on the [standard template file](https://www.kus.uni-hamburg.de/themen/oeffentlichkeitsarbeit/corporate-design/vorlagen.html) of the University of Hamburg (UHH) except for the font type, which is by default 'Helvetica'. If you are associated with the UHH you can also use the University's own font "TheSansUHH". In that case replace *font = "Helvetica"* with *font = "TheSansUHH"*. 
+By default *GHformats::word_doc* uses a 'gh-template.docx' template file with Guardant Health branding, with the font type by default set to 'HelveticaNeue'. 
 
 However, if you feel like using your own template or the standard Word template (i.e. the Normal.dot file), simply provide the path to your file or write "default" for the latter case (*reference_docx: "default"*). For further options see also the documentation of the *bookdown::word_document2* function, which is internally called. 
 
@@ -217,7 +217,7 @@ There is also the package [citr](https://github.com/crsh/citr), which I highly r
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to create a separate bibliography file named 'packages.bib' with all package references has already been added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the packages 'bookdown' (version `r packageVersion("bookdown")`) [@R-bookdown], 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr]. 
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This thesis, including tables, was generated using the packages 'bookdown' (version `r packageVersion("bookdown")`) [@R-bookdown], 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], and 'knitr' (version `r packageVersion("knitr")`) [@R-knitr]. 
 
 <!-- This will start a new page (LaTeX code) -->
 \newpage

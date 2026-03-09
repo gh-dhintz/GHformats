@@ -3,23 +3,23 @@ author: "created by Jane Doe"
 date: \today
 fontsize: 11pt
 params:
-  logo: images/uhh_logo.png
+  logo: images/GH_logo.png
   license: "CC-BY-SA"
   multicols: 3
   reduce_space_before_code: false
-  col_title: "8B8B83"
+  col_title: "4A5054"  # Guardant Health Data Gray
   col_sections: "000000"
-  col_code: "014979"
+  col_code: "005CB9"  # Guardant Health Science Blue
   col_headerbox: "FBEFCE"
-  col_redbox: "C34A47"
-  col_whitebox: "e0e0e0"
+  col_redbox: "EA1D23"  # Guardant Health Blood Red
+  col_whitebox: "EDEEEF"  # Guardant Health Light Gray
 header-includes: 
   # if you include a logo, don't remove this line!!
   - \newcommand{\logo}{`r gsub("_", "\\_", params$logo)`}
 output:
-  UHHformats::pdf_cheatsheet:
+  GHformats::pdf_cheatsheet:
     highlight: "kate"
-    font: "Helvetica" # alternative: "TheSansUHH"
+    font: "HelveticaNeue" # alternative: "Helvetica"
 ---
 
 ```{r setup, include = FALSE}

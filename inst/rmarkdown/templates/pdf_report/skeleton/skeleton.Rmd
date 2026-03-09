@@ -1,6 +1,6 @@
 ---
-title: "Document title"
-author: "Author name(s)"
+title: "Rmarkdown Reports as a Replacement for MS Word"
+author: "Daniel Hintz"
 date: \today
 fontsize: 11pt
 german: false # default is English
@@ -8,10 +8,10 @@ bibliography: bib/references.bib, bib/packages.bib
 bibliographystyle: bib/bibstyle.bst
 params:
   # replace path to images or remove lines (one has to be kept in!)
-  cover: images/cover.png
-  title_logo_left: images/uhh_logo.png
-  title_logo_right: images/min_logo.png
-  logo_small: images/logo_icon.png
+  #cover: images/GH_cover.png
+  title_logo_left: images/GH_logo.png
+  title_logo_right: images/GH_secondary_logo.png
+  logo_small: images/GH_logo_icon.png
 header-includes: 
   # if you removed one image path in 'params', remove the respective line here:
   - \newcommand{\cover}{`r gsub("_", "\\_", params$cover)`}
@@ -19,8 +19,8 @@ header-includes:
   - \newcommand{\titlelogoright}{`r gsub("_", "\\_", params$title_logo_right)`}
   - \newcommand{\logosmall}{`r gsub("_", "\\_", params$logo_small)`}
 output: 
-  UHHformats::pdf_report:
-    font: "Helvetica" # alternative: "TheSansUHH"  
+  GHformats::pdf_report:
+    font: "HelveticaNeue" # alternative: "Helvetica"  
 ---
 
 ```{r setup, include = FALSE}
@@ -42,7 +42,7 @@ library(tidyverse)
 # Create a bib database for R packages used above
 # NOTE: RUN THIS CODE CHUNK MANUALLY TO CREATE FILE BEFORE KNITTING
 knitr::write_bib(
-  x = c(.packages(), 'bookdown', 'rmarkdown', 'UHHformats',
+  x = c(.packages(), 'bookdown', 'rmarkdown', 'GHformats',
     # Add here now all packages that are loaded above:
     'knitr', 'kableExtra', 'xtable', 'tidyverse'), 
   file = 'bib/packages.bib'
@@ -67,7 +67,7 @@ Configure the YAML header including the following elements:
 * `params`: The cover and logo image directories for the front page are specified here.
 * `header_includes`: Here you can add additional \LaTeX code to include in the header, before the `\\begin\{document\}` statement. 
 * If you want to add additional LaTeX code to include before the `\\end\{document\}` statement use the field `include_after`. 
-* `output`: The nested fields for the output field are based on the arguments of the output function. Since `UHHformats::pdf_report` is based on `rmarkdown::pdf_document`, see its help page for more options. Current default settings are
+* `output`: The nested fields for the output field are based on the arguments of the output function. Since `GHformats::pdf_report` is based on `rmarkdown::pdf_document`, see its help page for more options. Current default settings are
     * `toc = TRUE`
     * `toc_depth = 5`
     * `number_sections = TRUE`
@@ -76,7 +76,7 @@ Configure the YAML header including the following elements:
     * `citation_package = "natbib"`
     * `latex_engine = "xelatex"`
     
-If you are associated with the UHH you can also use the University's own font "TheSansUHH". In that case replace `font = "Helvetica"` with `font = "TheSansUHH"`. To use another font, simply use the setting "other" and replace the 'font_XXX.ttf' files in the working directory with your own files. Please note, that you have to name these files exactly as the template font files.
+You can also use "Helvetica" instead of the default "HelveticaNeue". To use another font entirely, use the setting "other" and replace the 'font_XXX.ttf' files in the working directory with your own files. Please note, that you have to name these files exactly as the template font files.
 
 
 # The Body of the Article
@@ -237,4 +237,4 @@ There is also the package [citr](https://github.com/crsh/citr), which I highly r
 
 If you want to include a paragraph on the software used, here is some example text/code to get the current R and package versions. The code to create a separate bibiliography file named 'packages.bib' with all package references has already been added at the beginning of this script (code chunk 'generate-package-refs').
 
-All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'bookdown' (version `r packageVersion("bookdown")`) [@R-bookdown], 'UHHformats' (version `r packageVersion("UHHformats")`) [@R-UHHformats], 'knitr' (version `r packageVersion("knitr")`) [@R-knitr], 'kableExtra' (version `r packageVersion("kableExtra")`) [@R-kableExtra], 'xtable' (version `r packageVersion("xtable")`) [@R-xtable], and 'tidyverse' (version `r packageVersion("tidyverse")`) [@R-tidyverse.]
+All analyses were performed using the statistical software R (version `r paste(R.Version()$major, R.Version()$minor, sep = ".")`) [@R-base]. This report, including tables and figures, was generated using the packages 'rmarkdown' (version `r packageVersion("rmarkdown")`) [@R-rmarkdown], 'bookdown' (version `r packageVersion("bookdown")`) [@R-bookdown], 'GHformats' (version `r packageVersion("GHformats")`) [@R-GHformats], 'knitr' (version `r packageVersion("knitr")`) [@R-knitr], 'kableExtra' (version `r packageVersion("kableExtra")`) [@R-kableExtra], 'xtable' (version `r packageVersion("xtable")`) [@R-xtable], and 'tidyverse' (version `r packageVersion("tidyverse")`) [@R-tidyverse.]

@@ -1,17 +1,17 @@
 ---
-knit: UHHformats::rmd_to_jupyter
+knit: GHformats::rmd_to_jupyter
 editor_options: 
   chunk_output_type: console
 ---
 
-![logo](images/logo.png)
+![logo](images/GH_logo.png)
 
 ## Short introduction
 
 This is a short demo on how to convert an R Markdown file into a Jupyter Notebook using 
 this template.
 
-`UHHformats::rmd_to_jupyter` is a custom knit function that converts your R Markdown file into
+`GHformats::rmd_to_jupyter` is a custom knit function that converts your R Markdown file into
 a [Jupyter Notebook](https://jupyter.org/) (formerly known as IPython Notebook, hence, the file extension
 `.ipynb`). Jupyter Notebook files are simple JSON documents, that contain text, source code,
 rich media output, and metadata where each segment of the document is stored in a cell. This
