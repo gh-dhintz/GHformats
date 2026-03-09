@@ -14,3 +14,5 @@ Thumbs.db
 *.bak
 cache/
 figs/
+# Generated PDF outputs in template skeletons
+**/skeleton/*.pdf
