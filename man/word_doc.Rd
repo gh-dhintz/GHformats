@@ -9,8 +9,8 @@ word_doc(
   toc_depth = 4,
   number_sections = FALSE,
   highlight = "default",
-  reference_docx = "uhh-template",
-  font = "Helvetica",
+  reference_docx = "gh-template",
+  font = "HelveticaNeue",
   language = "en",
   dpi = 144,
   pandoc_args = NULL,
@@ -33,13 +33,12 @@ headers in this case.}
 Pass \code{NULL} to prevent syntax highlighting.}
 
 \item{reference_docx}{character; use the specified file as a style reference in producing a docx file.
-The 'uhh-template.docx' template implements most of the standard requirement at the UHH biology
-department. If you prefer another template, pass the file name to this argument or simply use
+The 'gh-template.docx' template implements most of the standard requirements at Guardant Health.
+If you prefer another template, pass the file name to this argument or simply use
 'default' to use your standard Word template.}
 
-\item{font}{character; default font in the template file is "Helvetica"; for members of the UHH there is also
-the font "TheSansUHH" available. If you want to provide your own Word template, there is no
-need to set any font here.}
+\item{font}{character; default font in the template file is "HelveticaNeue". If you want to provide
+your own Word template, there is no need to set any font here.}
 
 \item{language}{character; the document language. If set to "de" (ISO code for German), a configuration file
 named '_bookdown.yml' will be copied (unless this file exists already) to the directory of the R
@@ -54,12 +53,12 @@ bookdown's default terminology will be used.}
 \item{...}{Additional parameters to pass to \code{\link[bookdown]{pdf_book}}.}
 }
 \value{
-A modified \code{\link[rmarkdown]{word_document}} based on a UHH Word template.
+A modified \code{\link[rmarkdown]{word_document}} based on a Guardant Health Word template.
 }
 \description{
 This function serves as wrapper for \code{\link[bookdown]{word_document2}}, with a
 custom Pandoc Word template and different knitr default values (e.g., \code{number_sections = FALSE}).
-The Word template is based on the standard template of the University of Hamburg.
+The Word template is based on the standard template of Guardant Health.
 }
 \examples{
 \dontrun{

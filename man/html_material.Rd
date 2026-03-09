@@ -17,7 +17,7 @@ html_material(
   fig_caption = TRUE,
   use_bookdown = TRUE,
   md_extensions = NULL,
-  mathjax = "UHHformats",
+  mathjax = "GHformats",
   pandoc_args = NULL,
   ...
 )
@@ -79,6 +79,6 @@ that has a navigation bar on the left and in which the different sections
 The design is an adaptation from the Material design theme
 for Bootstrap 3 project: \url{https://github.com/FezVrasta/bootstrap-material-design}.
 The HTML, JavaScript, CSS, and R code were originally developed by Julien Barnier
-in the \href{https://github.com/juba/rmdformats}{rmdformats} package and only slightly
-modified here to tailor it to the 'Data Science in Biology' program at the UHH.
+in the \href{https://github.com/juba/rmdformats}{rmdformats} package and adapted
+for Guardant Health branding. This template uses Roboto font (embedded web fonts).
 }

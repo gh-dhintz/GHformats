@@ -19,7 +19,7 @@ html_simple(
   fig_caption = TRUE,
   use_bookdown = TRUE,
   md_extensions = NULL,
-  mathjax = "UHHformats",
+  mathjax = "GHformats",
   pandoc_args = NULL,
   ...
 )
@@ -81,5 +81,5 @@ that has a fixed table of content as naivation bar in the upper right corner.
 The basis for this function and the HTML, CSS, and JavaScript code is the
 \code{html_clean} R Markdown template developed by
 Julien Barnier in the \href{https://github.com/juba/rmdformats}{rmdformats}
-package.
+package. This template uses Roboto font (embedded web fonts).
 }

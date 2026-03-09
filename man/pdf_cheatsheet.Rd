@@ -6,7 +6,7 @@
 \usage{
 pdf_cheatsheet(
   highlight = "kate",
-  font = "Helvetica",
+  font = "HelveticaNeue",
   latex_engine = "xelatex",
   ...
 )
@@ -16,10 +16,9 @@ pdf_cheatsheet(
 include "default", "tango", "pygments", "kate" (default here),
 "monochrome", "espresso", "zenburn", and "haddock".}
 
-\item{font}{character; default font is "Helvetica"; for members of the UHH there is also the font
-"TheSansUHH" available. If you want to use another font, simply use the setting "other" and
-replace the .ttf files for regular, italic, bold, and bold-italic font with your own files
-(should be named EXACTLY as the template font files).}
+\item{font}{character; default font is "HelveticaNeue". If you want to use another font, simply
+use the setting "other" and replace the .ttf files for regular, italic, bold, and bold-italic
+font with your own files (should be named EXACTLY as the template font files).}
 
 \item{latex_engine}{character; LaTeX engine for producing PDF output. Options
 are "pdflatex", "lualatex", and "xelatex" (default).}
@@ -61,13 +60,13 @@ header color (without the hashtag); default is '000000' for black.
 hashtag); default is '000000' for black.
 \item \code{col_redbox} Hex decimal code of the red coloured textbox (
 Called with the LaTeX command \code{redbox}).
-Default is here 'bc0000'. Other colors that can be defined are
-\code{col_bluebox} (for \code{bluebox}, default is '027BCB'),
+Default is 'EA1D23' (Guardant Health Blood Red). Other colors that can be defined are
+\code{col_bluebox} (for \code{bluebox}, default is '1CB3E8' - GH Light Blue),
 \code{col_greenbox} (for \code{greenbox}, default is '7fa16a'),
 \code{col_yellowbox} (for \code{yellowbox}, default is 'eeb422'),
-\code{col_graybox} (for \code{graybox}, default is '8c8c8c'),
+\code{col_graybox} (for \code{graybox}, default is '4A5054' - GH Data Gray),
 \code{col_blackbox} (for \code{blackbox}, default is '191919'), and
-\code{col_whitebox} (for \code{whitebox}, default is 'e0e0e0').
+\code{col_whitebox} (for \code{whitebox}, default is 'EDEEEF' - GH Light Gray).
 }
 \item \code{header-includes} Custom additions to the header, before the
 \code{\\begin\{document\}} statement.

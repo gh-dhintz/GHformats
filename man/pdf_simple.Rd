@@ -7,7 +7,7 @@
 pdf_simple(
   number_sections = TRUE,
   highlight = "kate",
-  font = "Helvetica",
+  font = "HelveticaNeue",
   citation_package = "natbib",
   latex_engine = "xelatex",
   ...
@@ -20,10 +20,9 @@ pdf_simple(
 "tango", "pygments", "kate" (default here), "monochrome", "espresso", "zenburn", and "haddock".
 Pass \code{NULL} to prevent syntax highlighting.}
 
-\item{font}{character; default font is "Helvetica"; for members of the UHH there is also the font
-"TheSansUHH" available. If you want to use another font, simply use the setting "other" and
-replace the .ttf files for regular, italic, bold, and bold-italic font with your own files
-(should be named EXACTLY as the template font files).}
+\item{font}{character; default font is "HelveticaNeue". If you want to use another font, simply
+use the setting "other" and replace the .ttf files for regular, italic, bold, and bold-italic
+font with your own files (should be named EXACTLY as the template font files).}
 
 \item{citation_package}{character; the \LaTeX package to process "citations", "natbib" (default) or
 "biblatex". Use "none" if neither package is to be used.}
