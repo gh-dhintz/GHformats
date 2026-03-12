@@ -14,6 +14,36 @@ been adapted and rebranded for use at Guardant Health.
 
 ------------------------------------------------------------------------
 
+## TL;DR
+
+**R Markdown & Quarto templates for reproducible research at Guardant Health.** 11 branded templates: HTML, PDF, Word, Jupyter. Both R Markdown (7 templates) and Quarto (4 templates) supported.
+
+**Quick start:** `remotes::install_github("gh-dhintz/GHformats")` then use RStudio's **File > New File > R Markdown > From Template**.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+  - [R Markdown documents](#r-markdown-documents)
+  - [Quarto documents](#quarto-documents)
+  - [Further requirements - LaTeX](#further-requirements---latex)
+- [R Markdown Template Gallery](#r-markdown-template-gallery)
+  - [HTML document (simple design) - `html_simple`](#r-markdown-html-document-simple-design---html_simple)
+  - [HTML document (Material design) - `html_material`](#r-markdown-html-document-with-bootstrap-design-material---html_material)
+  - [Simple Microsoft Word document - `word_doc`](#r-markdown-simple-microsoft-word-document---word_doc)
+  - [Simple PDF document - `pdf_simple`](#r-markdown-simple-pdf-document-in-english-default-or-german---pdf_simple)
+  - [Guardant Health report - `pdf_report`](#r-markdown-guardant-health-report-in-english-default-or-german---pdf_report)
+  - [Cheat sheet - `pdf_cheatsheet`](#r-markdown-output-format-for-a-simple-cheat-sheet-pdf---pdf_cheatsheet)
+  - [Jupyter Notebook - `rmd_to_jupyter`](#r-markdown-jupyter-notebook-output-format---rmd_to_jupyter)
+- [Quarto Template Gallery](#quarto-template-gallery)
+  - [Simple HTML output - `html`](#quarto-simple-html-output-format---html)
+  - [Simple Microsoft Word output - `word`](#quarto-simple-microsoft-word-output-format---word)
+  - [Simple PDF document - `pdf_simple`](#quarto-output-format-for-a-simple-pdf-document-in-english-default-or-german---pdf_simple)
+  - [PDF report - `pdf_report`](#quarto-output-format-for-a-pdf-report-in-english-default-or-german---pdf_report)
+- [Useful Resources](#useful-resources)
+- [For Developers](#for-developers)
+- [Credits](#credits)
+
 This R package provides ready-to-use R Markdown and **now also Quarto
 templates** for HTML, PDF and Microsoft Word output formats, which are
 used within Guardant Health. The package aims to encourage reproducible
