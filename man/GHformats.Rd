@@ -32,7 +32,7 @@ function \code{\link{create_rmd_doc}}:
 \itemize{
 \item \code{\link{html_simple}}: Creates a simple HTML document with a
 fixed table of content.
-\item \code{\link{html_material}}: Creates a HTML document based on the
+\item \code{\link{html_material}}: Creates an HTML document based on the
 bootstrap design 'material'.
 \item \code{\link{word_doc}}: Creates a simple MS Word document in English
 (default) and German.

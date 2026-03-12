@@ -77,7 +77,7 @@ R Markdown output format to pass to \code{\link[rmarkdown]{render}}
 }
 \description{
 This function converts the R Markdown file into a simple HTML document output format
-that has a fixed table of content as naivation bar in the upper right corner.
+that has a fixed table of content as navigation bar in the upper right corner.
 The basis for this function and the HTML, CSS, and JavaScript code is the
 \code{html_clean} R Markdown template developed by
 Julien Barnier in the \href{https://github.com/juba/rmdformats}{rmdformats}

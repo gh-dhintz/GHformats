@@ -191,7 +191,7 @@ GHformats::create_qmd_doc(dirname = "my_html_doc", template = "html")
 GHformats::create_qmd_doc(dirname = "my_pdf_doc", template = "pdf_simple")
 ```
 
-to generate a HTML page with the browsers default font or a simple PDF
+to generate an HTML page with the browser’s default font or a simple PDF
 document with Guardant Health’s corporate font (HelveticaNeue).
 
 If you are using RStudio, go in the files manager to your new
@@ -295,7 +295,7 @@ To get an overview of options that can be set in the YAML header besides
 This template converts the R Markdown file into an HTML output file that
 has a navigation bar on the left and in which the different sections
 (defined by setting header level 1 (#)) are displayed on individual
-pages or cards. By defualt all sections on a single page, with the option
+pages or cards. By default all sections on a single page, with the option
 `cards: false` option in the YAML header. The design is an adaptation
 from the Material design theme for Bootstrap 3 project:
 <https://github.com/FezVrasta/bootstrap-material-design>. The underlying HTML/JavaScript/CSS and R implementation originated in Julien Barnier’s rmdformats package and was subsequently adapted for the Data Science in Biology program at UHH, then further modified for Guardant Health data science workflows in GHformats.
@@ -441,10 +441,10 @@ hopefully sufficient enough for the inexperienced coder.
 [here](https://github.com/gh-dhintz/GHformats/blob/master/resources/examples/demo_rmd_to_jupyter.ipynb).
 
 While I’m a strong advocate of R Studio and R Studio server as IDE for
-R, there are times where \[Juypter Notebook\]\[<https://jupyter.org/>\]
+R, there are times when \[Jupyter Notebook\]\[<https://jupyter.org/>\]
 is clearly the better option. This package includes the functionality to convert R Markdown files
-into Jupyter Notebooks with a approach adapated from the [rmd2jupyter](https://github.com/mkearney/rmd2jupyter) package developed
-my Michael Kearney. The underlying function is a custom knit function, which
+into Jupyter Notebooks with an approach adapted from the [rmd2jupyter](https://github.com/mkearney/rmd2jupyter) package developed
+by Michael Kearney. The underlying function is a custom knit function, which
 converts the R Markdown code directly into a prettified JSON string
 using `jsonlite::toJSON` and `jsonlite::prettify` and saves it then in
 an `.ipynb` file
@@ -690,7 +690,7 @@ python3 scripts/generate_preview_montages.py
 - **Jupyter conversion fails**: Ensure `jupyter nbconvert` works independently first
 
 ## Credits
-1.  Saskia Otto [UHHformats](https://github.com/uham-bio/UHHformats) package
+1.  Saskia Otto's [UHHformats](https://github.com/uham-bio/UHHformats) package
 2.  Julien Barnier’s [rmdformats](https://github.com/juba/rmdformats)
     package
 3.  The [rticles](https://github.com/rstudio/rticles) package

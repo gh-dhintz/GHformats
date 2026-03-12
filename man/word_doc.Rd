@@ -63,6 +63,6 @@ The Word template is based on the standard template of Guardant Health.
 \examples{
 \dontrun{
  # put in YAML header:
- output: UHHthesis::word_doc
+ output: GHformats::word_doc
 }
 }

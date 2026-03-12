@@ -135,7 +135,7 @@ summary(mtcars[,1:4])
 
 ### R Markdown table
 
-Table \ref{tab:rmd_tab} is a R Markdown table including a caption (note: the table number is automatically assigned) and label for cross-referencing:
+Table \ref{tab:rmd_tab} is an R Markdown table including a caption (note: the table number is automatically assigned) and label for cross-referencing:
 
 | A            | New              | Table          |
 |:-------------|:----------------:|---------------:|
