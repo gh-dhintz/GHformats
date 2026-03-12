@@ -16,3 +16,4 @@ cache/
 figs/
 # Generated PDF outputs in template skeletons
 **/skeleton/*.pdf
+README.html
