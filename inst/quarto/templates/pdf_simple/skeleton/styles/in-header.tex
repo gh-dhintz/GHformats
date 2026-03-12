@@ -49,8 +49,12 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor} % for colorlinks
 
 % Define colors for headers and links: {{{
-\definecolor{bluegray}{HTML}{3B515B} 
-\definecolor{blue}{HTML}{0271BB} 
+\definecolor{bluegray}{HTML}{3B515B}
+\definecolor{blue}{HTML}{0271BB}
+\definecolor{linkcol}{HTML}{0271BB} %lightblue
+\definecolor{filecol}{HTML}{b70000} %darkred
+\definecolor{urlcol}{HTML}{b70000} %darkred
+\definecolor{citecol}{HTML}{0271BB} %lightblue
 % }}}
 
 % Font colors {{{
@@ -64,13 +68,13 @@
 \addtokomafont{subsubsection}{\color{bluegray}}   % text color for subsubsection header
 % }}}
 
-% Hypersetup for links {{{ --> currently not working!
+% Hypersetup for links {{{
 \hypersetup{
 colorlinks=true,
 linkcolor=linkcol,
-filecolor=linkcol,
-urlcolor=linkcol,
-citecolor=linkcol,
+filecolor=filecol,
+urlcolor=urlcol,
+citecolor=citecol,
 bookmarks=true,
 linktocpage=true,
 pdfpagemode=UseOutlines

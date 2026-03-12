@@ -43,6 +43,10 @@ format:
     lof: false  # list of figures
     lot: false  # list of tables
     colorlinks: true
+    linkcolor: linkcol
+    urlcolor: urlcol
+    citecolor: citecol
+    filecolor: filecol
     crossref: 
       chapters: false     # set to 'true' if figure numbering should follow subsections
       fig-prefix: Fig.    # (default is 'Figure'; adjust if language is German)

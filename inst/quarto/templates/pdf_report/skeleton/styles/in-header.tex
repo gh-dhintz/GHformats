@@ -10,6 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{hyphenat}
+\usepackage{lastpage}  % allows reference to last page
 
 % For title page
 \usepackage{afterpage}  
@@ -55,8 +56,12 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor} % for colorlinks
 
 % Define colors for headers and links: {{{
-\definecolor{bluegray}{HTML}{3B515B} 
-\definecolor{blue}{HTML}{0271BB} 
+\definecolor{bluegray}{HTML}{3B515B}
+\definecolor{blue}{HTML}{0271BB}
+\definecolor{linkcol}{HTML}{0271BB} %lightblue
+\definecolor{filecol}{HTML}{b70000} %darkred
+\definecolor{urlcol}{HTML}{b70000} %darkred
+\definecolor{citecol}{HTML}{0271BB} %lightblue
 % }}}
 
 % Font colors {{{
@@ -70,13 +75,13 @@
 \addtokomafont{subsubsection}{\color{bluegray}}   % text color for subsubsection header
 % }}}
 
-% Hypersetup for links {{{ --> currently not working!
+% Hypersetup for links {{{
 \hypersetup{
 colorlinks=true,
 linkcolor=linkcol,
-filecolor=linkcol,
-urlcolor=linkcol,
-citecolor=linkcol,
+filecolor=filecol,
+urlcolor=urlcol,
+citecolor=citecol,
 bookmarks=true,
 linktocpage=true,
 pdfpagemode=UseOutlines
@@ -86,14 +91,27 @@ pdfpagemode=UseOutlines
 
 % %----------------------------------------------- Header and footer
 
+% Define page name
+\newcommand\pagename{Page}
+
 % Delete default settings and define your own {{{
 \usepackage[headsepline, automark]{scrlayer-scrpage}
 \clearpairofpagestyles
-\ohead[]{\headmark} 
-\ofoot[\pagemark]{\pagemark}
-% \ifoot[]{\includegraphics[height=10mm]{GH_logo.png}}
-% }}}
+\ihead[]{\headmark}
+\ohead[]{\includegraphics[height=1cm]{images/GH_logo_icon.png}}
+\ofoot[]{\pagename~\thepage~/ \textcolor{linkcol}{\pageref{LastPage}}}
 
+% Apply logo to chapter pages (plain style) as well
+\chead*{}
+\ihead*{\headmark}
+\ohead*{\includegraphics[height=1cm]{images/GH_logo_icon.png}}
+\cfoot*{}
+\ofoot*{\pagename~\thepage~/ \textcolor{linkcol}{\pageref{LastPage}}}
+
+% Suppress footer on TOC pages
+\AfterTOCHead{\thispagestyle{empty}}
+
+% }}}
 
 
 % %----------------------------------------------- Lists

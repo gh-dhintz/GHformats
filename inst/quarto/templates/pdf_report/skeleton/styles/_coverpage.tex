@@ -4,8 +4,7 @@
 % This template is based on a post by Arun Debray to tex.stackoverflow
 % https://tex.stackexchange.com/posts/554962/revisions
 
-\newgeometry{left=1in, right=1in,top=2in, bottom=0in}
-\begin{minipage}[b][\textheight][s]{\textwidth}
+\newgeometry{left=1in, right=1in,top=0in, bottom=0in}
 
 % Title color
 $if(cover-fade-effect)$
@@ -23,27 +22,58 @@ $endif$
 \pagecolor{pgcolor}\afterpage{\nopagecolor}
 
 \thispagestyle{empty}
-\begin{flushleft}
-    \color{txtcolor}\headingfont{\fontsize{40}{48}\selectfont $title$}\\[1em]
-    \vspace{0.5em}
-    \color{txtcolor}\headingfont\itshape{\fontsize{20}{24}\selectfont  $subtitle$}\\[1em]
-\end{flushleft}
-\vfill
+
 $if(cover-bg-image)$
-\begin{center}
+% Place cover image at the very top of the page
+\noindent
+\vspace*{-1in}
+\vspace*{-\topmargin}
+\vspace*{-\headheight}
+\vspace*{-\headsep}
+\hspace*{-1in}
+\makebox[\paperwidth][c]{%
     $if(cover-fade-effect)$
     \begin{tikzpicture}
     \node[scope fading=north, inner sep=0pt, outer sep=0pt]{
-     \makebox[\textwidth]{\includegraphics[width=\paperwidth]{$cover-bg-image$}}
+     \includegraphics[width=\paperwidth,keepaspectratio]{$cover-bg-image$}
     };
     \end{tikzpicture}
     $else$
-    \makebox[\textwidth]{\includegraphics[width=\paperwidth]
-    {$cover-bg-image$}}
+    \includegraphics[width=\paperwidth,keepaspectratio]{$cover-bg-image$}
     $endif$
- \end{center}
- $endif$
+}
 
-\end{minipage}%
+\vspace{2em}
+$else$
+% No cover image - add spacing before title
+\vspace*{3cm}
+$endif$
+
+\noindent
+\begin{flushleft}
+    \color{txtcolor}\headingfont{\fontsize{28}{34}\selectfont $title$}\\[1em]
+    \vspace{0.5em}
+    \color{txtcolor}\headingfont\itshape{\fontsize{14}{18}\selectfont  $subtitle$}\\[1em]
+\end{flushleft}
+
+\vfill
+
+% Place logos at bottom left and right of page with padding
+\noindent
+\begin{minipage}[b]{0.45\textwidth}
+$if(logo1)$
+    \includegraphics[height=1.2cm]{$logo1$}
+$endif$
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.45\textwidth}
+\raggedleft
+$if(logo2)$
+    \includegraphics[height=1.2cm]{$logo2$}
+$endif$
+\end{minipage}
+
+\vspace{1cm}
+
 \clearpage
 \restoregeometry

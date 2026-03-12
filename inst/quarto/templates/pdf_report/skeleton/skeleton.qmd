@@ -53,10 +53,12 @@ format:
         \renewcommand*{\cleardoublepage}{\clearpage}
         \makeatother
     # Options for front cover
-    cover-bg-image: "images/GH_cover.png"
+    # Comment out cover-bg-image line if no cover image is desired
+    # When no cover image is provided, the title will appear near the top with default 3cm spacing
+    cover-bg-image: "images/GH_cover_lab.png"
     cover-page-color: "FFFFFF"  # provide hex color code
     cover-text-color: "4A5054"  # Guardant Health Data Gray
-    cover-fade-effect: true
+    cover-fade-effect: false
     # Options for table of content
     toc: true
     toc-depth: 3
@@ -66,6 +68,10 @@ format:
     lof: false  # list of figures
     lot: false  # list of tables
     colorlinks: true
+    linkcolor: linkcol
+    urlcolor: urlcol
+    citecolor: citecol
+    filecolor: filecol
     crossref: 
       chapters: false     # set to 'true' if figure numbering should follow subsections
       fig-prefix: Fig.    # (default is 'Figure'; adjust if language is German)
