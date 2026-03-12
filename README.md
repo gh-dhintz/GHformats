@@ -1,4 +1,4 @@
-# GHformats
+# GHformats <img src="vignettes/images/GHformats_logo.png" align="right" width="90" height="100" />
 
 <!-- [![R-CMD-check](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml) -->
 
@@ -692,7 +692,7 @@ python3 scripts/generate_preview_montages.py
 - **Jupyter conversion fails**: Ensure `jupyter nbconvert` works independently first
 
 ## Credits
-1.  Saskia Otto [UHHformtas](https://github.com/uham-bio/UHHformats) package
+1.  Saskia Otto [UHHformats](https://github.com/uham-bio/UHHformats) package
 2.  Julien Barnier’s [rmdformats](https://github.com/juba/rmdformats)
     package
 3.  The [rticles](https://github.com/rstudio/rticles) package
