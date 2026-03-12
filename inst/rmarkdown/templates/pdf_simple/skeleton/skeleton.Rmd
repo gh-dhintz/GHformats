@@ -2,8 +2,6 @@
 title: "Document title"
 subtitle: "Subtitle"
 author: "Author name(s)"
-header_left: "Runninghead"
-header_right: "Author"
 date: \today
 fontsize: 11pt
 german: false # default is English

@@ -183,6 +183,9 @@ $endif$
 % Definition of pagename (so it can be changed by user
 \newcommand\pagename{Page}
 
+% Default spacing for title when no cover image (can be overridden in header-includes)
+\newcommand{\nocovertitlespace}{13cm}
+
 % }}}
 
 
@@ -251,13 +254,13 @@ $endif$
 	\rhead{}
 	\makeatother
 	$if(params.title_logo_left)$
-	\lfoot{\includegraphics{\titlelogoleft}}
+	\lfoot{\raisebox{20pt}{\includegraphics{\titlelogoleft}}}
 	$else$
 	\lfoot{}
 	$endif$
 	\cfoot{}
 	$if(params.title_logo_right)$
-	\rfoot{\includegraphics{\titlelogoright}}
+	\rfoot{\raisebox{20pt}{\includegraphics{\titlelogoright}}}
 	$else$
 	\rfoot{}
 	$endif$
@@ -274,7 +277,7 @@ $if(params.cover)$
 	\ClearShipoutPicture
 
 	\phantom{a}\hfill
-	\vspace{13cm}
+	\vspace{12.3cm}
 
 	\begin{tabular}[l]{@{}p{\textwidth}@{}}
 		\color{bluegray}\headingfont\Huge\@title\\[1em]
@@ -290,7 +293,7 @@ $else$
 \renewcommand{\maketitle}{
 	\thispagestyle{customtitle}
 	\phantom{a}\hfill
-	\vspace{13cm}
+	\vspace{-0.7cm}
 
 	\begin{tabular}[l]{@{}p{\textwidth}@{}}
 		\color{bluegray}\headingfont\Huge\@title\\[1em]
@@ -309,7 +312,7 @@ $endif$
 
 % Header and footer {{{
 \pagestyle{fancy}
-\lhead{}
+\lhead{\leftmark}
 \chead{}
 $if(params.logo_small)$
 \rhead{\includegraphics[height=1cm]{\logosmall}}
@@ -324,6 +327,10 @@ $endif$
 \rfoot{\pagename~\thepage \hspace{1pt} / \pageref{LastPage}}
 \renewcommand\headrulewidth{0pt}
 \renewcommand\footrulewidth{0pt}
+
+% Configure section marks to show section number and name in header
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ \ #1}{}}
+
 % }}}
 
 

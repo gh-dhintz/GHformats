@@ -2,7 +2,7 @@
 title: "Title"
 author: "Name"
 date: "`r Sys.Date()`"
-logo: "images/logo.svg"
+logo: "images/GH_logo.svg"
 ### Comment or remove the following two lines if NO references are used
 bibliography: [bib/references.bib, bib/packages.bib] # Path to bibliography files 
 csl: bib/sage-harvard.csl                            # Path to reference style file

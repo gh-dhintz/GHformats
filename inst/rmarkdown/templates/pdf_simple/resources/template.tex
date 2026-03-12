@@ -236,18 +236,15 @@ $endfor$
 
 \thispagestyle{empty}
 
- $if(header_left)$
- \fancyhead[L]{$header_left$}
- $else$
- \fancyhead[L]{}
- $endif$
+\fancyhead[L]{}
+\fancyhead[R]{\rightmark}
 
- $if(header_right)$
- \fancyhead[R]{$header_right$}
- $else$
- \fancyhead[R]{}
- $endif$
+\fancyfoot[L]{\includegraphics[height=10mm]{GH_logo.png}}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
 
+% Configure section marks to appear in right header with section number
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ \ #1}}
 
 % }}}
 

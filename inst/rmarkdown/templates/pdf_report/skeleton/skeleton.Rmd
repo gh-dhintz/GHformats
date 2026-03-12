@@ -1,14 +1,15 @@
 ---
-title: "Rmarkdown Reports as a Replacement for MS Word"
-author: "Daniel Hintz"
+title: "Document title"
+author: "Author name(s)"
 date: \today
 fontsize: 11pt
 german: false # default is English
 bibliography: bib/references.bib, bib/packages.bib
 bibliographystyle: bib/bibstyle.bst
 params:
-  # replace path to images or remove lines (one has to be kept in!)
-  #cover: images/GH_cover.png
+  # replace path to images or remove or comment out lines (one has to be kept in!)
+  # The title will be positioned near the top of first page when there is no cover image and below the cover image if there is one
+  cover: images/GH_cover_lab.png
   title_logo_left: images/GH_logo.png
   title_logo_right: images/GH_secondary_logo.png
   logo_small: images/GH_logo_icon.png
@@ -18,6 +19,7 @@ header-includes:
   - \newcommand{\titlelogoleft}{`r gsub("_", "\\_", params$title_logo_left)`}
   - \newcommand{\titlelogoright}{`r gsub("_", "\\_", params$title_logo_right)`}
   - \newcommand{\logosmall}{`r gsub("_", "\\_", params$logo_small)`}
+  - \renewcommand{\nocovertitlespace}{-0cm} # resets title placement. DON'T COMMENT OUT. You can alter it for higher or lower placement; ie., \renewcommand{\nocovertitlespace}{-1cm} or \renewcommand{\nocovertitlespace}{1cm} etc
 output: 
   GHformats::pdf_report:
     font: "HelveticaNeue" # alternative: "Helvetica"  
