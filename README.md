@@ -2,8 +2,6 @@
 
 <!-- [![R-CMD-check](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/gh-dhintz/GHformats/actions/workflows/check-standard.yaml) -->
 
-## Attribution
-
 **GHformats** is a derivative work based on the
 [UHHformats](https://github.com/uham-bio/UHHformats) package by Saskia
 Otto, licensed under [CC BY
