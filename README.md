@@ -34,7 +34,7 @@ templates for
     `html_material`](#r-markdown-html-document-with-bootstrap-design-material---html_material)
   - [Quarto: Simple HTML output format -
     `html`](#quarto-simple-html-output-format---html)
-- Enhanced PDF reports (with toc and company logos)
+- Enhanced PDF reports
   - [R Markdown: Guardant Health report in English (default) or German -
     `pdf_report`](#r-markdown-guardant-health-report-in-english-default-or-german---pdf_report)
   - [Quarto: Output format for a PDF report in English (default) or
