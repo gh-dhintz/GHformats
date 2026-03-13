@@ -186,3 +186,13 @@ if (!is.null(attr(result, "status")) && attr(result, "status") != 0) {
 } else {
   cat(paste(result, collapse = "\n"))
 }
+
+# Remove macOS quarantine attributes from Word files (prevents lock warnings)
+cat("\n")
+cat("Cleaning macOS attributes from Word files...\n")
+word_files <- list.files(output_dir, pattern = "\\.docx$", full.names = TRUE)
+for (word_file in word_files) {
+  system2("xattr", args = c("-d", "com.apple.quarantine", word_file),
+          stdout = FALSE, stderr = FALSE)
+}
+cat("✓ Word files cleaned\n")
