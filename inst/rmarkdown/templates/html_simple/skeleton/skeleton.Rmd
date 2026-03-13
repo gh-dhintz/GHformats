@@ -30,7 +30,7 @@ library(knitr)
 # Automatically create a bib database for R packages loaded above
 knitr::write_bib(
   x = c(.packages(), 'rmarkdown', 'GHformats',
-    # Add here now all packages that are loaded above:
+    # Now add all packages that are loaded above:
     'knitr'), 
   file = 'bib/packages.bib')
 ```

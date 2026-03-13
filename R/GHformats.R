@@ -1,7 +1,7 @@
 #' GHformats: R Markdown/Quarto templates designed for Guardant Health
 #'
 #' A package for creating HTML, PDF and Microsoft Word documents, reports,
-#' and cheat sheets using either R Markdown or now also Quarto.
+#' and cheat sheets using either R Markdown or Quarto.
 #'
 #' @section Quarto templates:
 #' The following templates can be created using the function \code{\link{create_quarto_doc}}.

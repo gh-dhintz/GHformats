@@ -7,7 +7,7 @@
 \title{GHformats: R Markdown/Quarto templates designed for Guardant Health}
 \description{
 A package for creating HTML, PDF and Microsoft Word documents, reports,
-and cheat sheets using either R Markdown or now also Quarto.
+and cheat sheets using either R Markdown or Quarto.
 }
 \section{Quarto templates}{
 

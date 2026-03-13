@@ -46,8 +46,8 @@ been adapted and rebranded for use at Guardant Health.
 - [For Developers](#for-developers)
 - [Credits](#credits)
 
-This R package provides ready-to-use R Markdown and **now also Quarto
-templates** for HTML, PDF and Microsoft Word output formats, which are
+This R package provides ready-to-use R Markdown and Quarto templates
+for HTML, PDF and Microsoft Word output formats, which are
 used within Guardant Health. The package aims to encourage reproducible
 research using simple Markdown syntax while embedding all of the R code
 to produce plots and analyses as well. Included in the package are
@@ -102,7 +102,7 @@ cross-references and including references.
 - Templates focus on reports and analyses for data science workflows.
 - Small design makeover of various templates.
 - A new Word template for R Markdown was added.
-- This package also contains now templates for Quarto documents that
+- This package now also contains templates for Quarto documents that
   generate HTML, PDF, and MS Word output (see [Quarto template
   gallery](#quarto-template-gallery)). [Quarto](https://quarto.org) is a
   next generation version of R Markdown from RStudio, which supports
@@ -264,8 +264,8 @@ first attempt to knit when you use this package.
 
 Although LaTeX is a powerful and popular tool in Academia, it can take a
 while to learn the syntax and to find the correct formatting. R Markdown
-and the PDF template in this packages offer a much simpler syntax and
-the direct embedding of figures and tables, but at the cost of loosing
+and the PDF template in this package offer a much simpler syntax and
+the direct embedding of figures and tables, but at the cost of losing
 some of the expressiveness of LaTeX. However, you can insert LaTeX code
 directly into the R Markdown files and also add LaTeX packages and
 format styles in the YAML header.
@@ -345,7 +345,7 @@ or `rmarkdown::html_document`.
 
 <img src="vignettes/images/img_preview_rmd_html_material.png" alt="RMarkdown demo html_material template" width="1464" style="display: block; margin: auto;" />
 
-#### Addtional features available in these HTML templates:
+#### Additional features available in these HTML templates:
 
 Some extra features were adopted from the
 [rmdformats](https://github.com/juba/rmdformats) package, i.e. 
@@ -378,7 +378,7 @@ If you feel like using your own template or the standard Word template
 “default” for the latter case (*reference_docx: “default”*). You can
 also use another font by using the setting *font = “other”* and
 replacing the ‘font_XXX.ttf’ files in the working directory with your
-own files. Please note, that you have to name these files exactly as the
+own files. Please note that you have to name these files exactly as the
 template font files.
 
 If you set the language to German, a configuration file named
@@ -605,7 +605,7 @@ help, go to Quarto’s PDF documentation:
 → for an example file see also
 [here](https://github.com/gh-dhintz/GHformats/blob/master/resources/examples/demo_quarto_pdf_report.pdf).
 
-If you want to have more a report style document choose as template
+If you want a more report-like document, choose as template
 ‘pdf_report’:
 
 ``` r

@@ -33,7 +33,7 @@ library(tidyverse)
 # NOTE: RUN THIS CODE CHUNK MANUALLY TO CREATE FILE BEFORE KNITTING
 knitr::write_bib(
   x = c(.packages(), 'bookdown', 'rmarkdown', 'GHformats',
-    # Add here now all packages that are loaded above:
+    # Now add all packages that are loaded above:
     'knitr', 'kableExtra', 'xtable', 'tidyverse'),
   file = 'bib/packages.bib'
 )
@@ -46,7 +46,7 @@ knitr::write_bib(
 Configure the YAML header including the following elements:
 
 * `title`: Title
-* `subtitle`: Subitle; remove option completely, if you don't need a subtitle.
+* `subtitle`: Subtitle; remove option completely, if you don't need a subtitle.
 * `author`: Character of single or multiple author(s)
 * `header_left`: A running title as left header; remove option to leave blank.
 * `header_right`: A second right header (e.g. authors); remove option to leave blank.
@@ -66,7 +66,7 @@ Configure the YAML header including the following elements:
 * `header_includes`: Here you can add additional \LaTeX code to include in the header, before the `\\begin\{document\}` statement. 
 * If you want to add additional LaTeX code to include before the `\\end\{document\}` statement use the field `include_after`. 
 
-You can also use "Helvetica" instead of the default "HelveticaNeue". To use another font entirely, use the setting "other" and replace the 'font_XXX.ttf' files in the working directory with your own files. Please note, that you have to name these files exactly as the template font files.
+You can also use "Helvetica" instead of the default "HelveticaNeue". To use another font entirely, use the setting "other" and replace the 'font_XXX.ttf' files in the working directory with your own files. Please note that you have to name these files exactly as the template font files.
 
 
 # Methods
