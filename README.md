@@ -20,6 +20,8 @@ been adapted and rebranded for use at Guardant Health.
 
 **Quick start:** `remotes::install_github("gh-dhintz/GHformats")` then use RStudio's **File > New File > R Markdown > From Template**.
 
+📂 **Browse all example outputs:** [resources/examples/](https://github.com/gh-dhintz/GHformats/tree/master/resources/examples)
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -276,6 +278,8 @@ tutorial (and its entire documentation):
 
 ## R Markdown template gallery
 
+📂 **View all example files:** All template examples (HTML, PDF, Word, Jupyter) can be browsed in the [resources/examples/](https://github.com/gh-dhintz/GHformats/tree/master/resources/examples) directory. Each template section below also links to its specific example file.
+
 ### R Markdown: HTML document (simple design) - `html_simple`
 
 → for an example file see also
@@ -511,6 +515,8 @@ When opening your file in Jupyter Notebook, please note that
 ------------------------------------------------------------------------
 
 ## Quarto template gallery
+
+📂 **View all example files:** All Quarto template examples (HTML, PDF, Word) can be browsed in the [resources/examples/](https://github.com/gh-dhintz/GHformats/tree/master/resources/examples) directory. Each template section below also links to its specific example file.
 
 ### Quarto: Simple HTML output format - `html`
 
