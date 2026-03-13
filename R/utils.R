@@ -62,7 +62,7 @@ rmd_pdf_document_format <- function(format,
 
 
 # Helper function to create a custom format derived from bookdown::word_document2
-# that includes a custom UHH Word template
+# that includes a custom Guardant Health Word template
 rmd_word_document_format <- function(format, filename, ...) {
   template <- find_resource(format, file = filename)
   fmt <- bookdown::word_document2(..., reference_docx = template)
