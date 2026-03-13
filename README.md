@@ -385,6 +385,8 @@ file.
 
 <img src="vignettes/images/img_preview_rmd_word.png" alt="RMarkdown demo word_doc template" width="1827" style="display: block; margin: auto;" />
 
+> **Note:** The preview image above shows section names repeated in headers (e.g., "Methods Methods") due to LibreOffice's incomplete support for Word STYLEREF field switches during the screenshot generation process. This is a preview-only artifact—the actual Word documents render correctly in Microsoft Word with proper section numbering and titles (e.g., "1 Methods").
+
 ### R Markdown: Simple PDF document in English (default) or German - `pdf_simple`
 
 → for an example file see also
@@ -567,6 +569,8 @@ Normal.dot file), simply provide the path to your file under
 `reference-doc:` or comment/delete this line, respectively.
 
 <img src="vignettes/images/img_preview_quarto_word.png" alt="Quarto demo template for MS Word output" width="1827" style="display: block; margin: auto;" />
+
+> **Note:** The preview image above shows section names repeated in headers (e.g., "Methods Methods") due to LibreOffice's incomplete support for Word STYLEREF field switches during the screenshot generation process. This is a preview-only artifact—the actual Word documents render correctly in Microsoft Word with proper section numbering and titles (e.g., "1 Methods").
 
 ### Quarto: Output format for a simple PDF document in English (default) or German - `pdf_simple`
 
