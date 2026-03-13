@@ -15,7 +15,7 @@ format:
     toc: false
     toc-depth: 3
     toc-title: Contents
-    number-sections: true
+    number-sections: false # number sections is configured to true in the template docx file
     reference-doc: "gh-template.docx"
     crossref: 
       chapters: false     # set to 'true' if figure numbering should follow subsections
